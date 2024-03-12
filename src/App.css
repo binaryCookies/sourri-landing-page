@@ -1,0 +1,390 @@
+body {
+  background-color: #282c34;
+  font-family: "Optimistic Display", Arial, sans-serif; 
+}
+
+h2 {
+  color:#fff;
+  font: "Optimistic Display", sans-serif;
+}
+
+.App {
+  text-align: center;  
+  color:#61dafb;
+}
+
+
+.App-header {
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+justify-content: center;
+
+  font-size: calc(5px + 2vmin);
+  max-width: 800px;
+  margin: 0 auto;
+  font: "Optimistic Display";
+  color: #fff;
+
+}
+
+
+
+
+.p-text{
+  font: "Optimistic Display";
+
+}
+
+
+
+.nav-bar ul{
+  display: flex;
+  flex-direction: row; /* Ensure items are displayed horizontally */
+  justify-content: center; /* Align items horizontally at the center */
+ 
+  padding: 5px; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  background-color: rgba(32, 35, 42, .6);
+}
+
+.nav-bar li {
+  list-style-type: none;
+}
+
+.nav-bar a {
+  text-decoration: none; /* Remove underline from links */
+  font-size: 16px; /* Set font size */
+  font-weight: bold; /* Set font weight to bold */
+  padding: 10px 20px; /* Add padding to make the clickable area larger */
+  border-radius: 5px; /* Add rounded corners */
+  color:#61dafb;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.nav-bar a:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+
+
+
+
+.card {
+  padding: 20px;
+  border-radius: 8px;
+  border: thin solid rgba(20, 10, 10, 0.1); /* Set border with a thin solid line */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+  min-height: 60vh; /* Set minimum height to 60% of the viewport height */
+}
+
+
+.text-container {
+  max-width: 100%;
+  padding-top: 1rem;
+
+}
+
+
+
+
+.text-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.text-container ul li {
+  margin-bottom: 10px;
+
+}
+
+.text-content {
+  margin-bottom: 30px;
+}
+
+/* Adjustments for sidebar */
+/* Adjustments for sidebar */
+aside {
+  padding: 20px;
+  list-style-type: none;
+  min-height: 30vh; /* Set minimum height to 60% of the viewport height */
+
+
+}
+
+
+/* Adjustments for aside */
+.content {
+  display: grid;
+  grid-template-columns: 3fr;
+  gap: 20px; /* Add gap between the columns */
+  margin: 30px;
+}
+
+
+
+
+
+
+aside ul {
+    list-style-type: none;
+
+  text-decoration: none; /* Remove underline from links */
+  color: #ececec;
+  font-size: 16px; /* Set font size */
+
+
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+
+}
+
+aside a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Set text color */
+  font-size: 16px; /* Set font size */
+  font-weight: bold; /* Set font weight to bold */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+aside h2 {
+  text-transform: uppercase;
+}
+
+aside a:hover {
+  background-color: #f0f0f0; 
+}
+
+
+
+
+
+.project-highlights {
+  display: flex;
+}
+
+.project-highlights .highlight-section {
+  flex: 1;
+  display: flex; /* Added to align items horizontally */
+  flex-direction: column; /* Align items vertically */
+}
+
+.project-highlights .highlight-section ul {
+  flex: 1;
+  display: flex; /* Added to align items horizontally */
+  flex-direction: column; /* Align items vertically */
+  min-width: 300px;
+}
+
+.project-highlights .highlight-section ul:first-child {
+  margin-right: 20px; /* Adjust this value as needed */
+}
+
+.project-highlights .highlight-section:nth-child(even) ul {
+  margin-left: auto; /* Push content to the right */
+}
+
+
+
+
+/* PROJECT HIGHLIGHTS & EXPERIENCES LIST */
+.project-highlights .highlight-section ul:first-child li:first-child {
+  font-weight: bold;
+  color:#61dafb;
+  padding: 5px;
+  
+}
+
+.project-highlights ul{
+  padding-left: 0;
+}
+
+
+
+.link-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox to display list items in a row */
+  flex-wrap: wrap; /* Allow list items to wrap to the next line */
+  justify-content: space-between; /* Add space between list items */
+ 
+}
+
+.link-list li {
+  flex: 1; /* Each list item takes up equal space */
+
+}
+/* To remove margin from the last list item */
+.link-list li:last-child {
+  margin-right: 0; /* Remove margin from the last list item */
+}
+
+
+.card-project {
+  padding: 15px;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px  #61dafb;;
+
+  color:#61dafb;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+
+}
+
+.card-project a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.card-project p {
+  margin-top: 10px;
+}
+
+.card-project:hover {
+  transform: scale(1.1); /* Increase the size of the hovered element */
+}
+
+
+
+
+
+.react-logo-container {
+
+  position: fixed; /* Use fixed positioning */
+  top: 50%; /* Move the top edge of the logo to the middle of the viewport */
+  left: 50%; /* Move the left edge of the logo to the middle of the viewport */
+  transform: translate(-50%, -50%);
+
+  /* background-image: url('../../sourri-landing-page/public/logo512.png');  */
+  background-size: contain; /* Ensure the background image fits within the container */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-position: center; /* Center the background image within the container */
+  z-index: 1000;
+  opacity: 0.06;
+}
+
+
+
+
+
+/* Rules for the animation */
+.react-logo-container img {
+  animation: App-logo-spin 20s linear infinite; /* Apply the animation */
+  display: flex;
+  justify-self: flex-start;
+}
+
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  background-color: #282c34;
+  color: #fff;
+}
+
+@media(max-width: 575px){
+  .App p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* PROJECT HIGHLIGHTS SECTION */
+@media(max-width: 1350px){
+  .project-highlights{
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  }
+
+}
+@media(max-width: 790px){
+  .project-highlights{
+    display: grid;
+    gap: 10px;
+  grid-template-columns: 1fr ;
+  align-items: center;  /* vertical-align */
+  justify-items: center;   /* horizontal-align */
+  text-align: center;
+  }
+
+}
+
+@media(max-width: 790px){
+  .project-highlights{
+
+  grid-template-columns: 1fr;
+  }
+
+}
+
+/* Previous projects. Center the elements on the horizontal axis using flex */
+@media (max-width: 798px) {
+  .article {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within the article */
+  }
+
+  .article h2 {
+    margin-bottom: 1rem; /* Add space below the heading */
+  }
+
+  .link-list {
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove default list styles */
+  }
+
+  /* Center text within the card project */
+  .card-project .projects {
+    text-align: center;
+  }
+}
+
+
+
+/* Media Query for Small Screens */
+@media (max-width: 800px) {
+  /* Styles for the list */
+  .article ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; /* Adjust as needed */
+  }
+
+  /* Styles for the card projects */
+  .card-project {
+    width: 100%; /* Ensure card projects take full width */
+  }
+  
+  /* Center text within the card projects */
+  .card-project p {
+    text-align: center;
+    color: red; /* Add a temporary style to see if it's applied */
+  }
+  .projects {
+    margin-right: 0;
+
+  }
+}
+
