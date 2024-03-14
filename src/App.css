@@ -256,10 +256,7 @@ color: #ececec;
   transform: scale(1.1); /* Increase the size of the hovered element */
   cursor: pointer;
 }
-.card-project:{
-  transform: scale(1.1); /* Increase the size of the hovered element */
-  cursor: pointer;
-}
+
 
 
 
@@ -378,7 +375,7 @@ color: #ececec;
 
 
 .article a {
-  text-decoration: none;
+     text-decoration: none;
 }
 
 
