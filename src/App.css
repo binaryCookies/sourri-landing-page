@@ -223,6 +223,8 @@ max-width: 500px;
 
 
 
+
+
 .card-project {
   padding: 15px;
   border-radius: 8px;
@@ -232,8 +234,8 @@ max-width: 500px;
   margin-bottom: 10px;
   transition: transform 0.3s ease; /* Smooth transition for scaling effect */
   display: grid;
-
-  z-index: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Apply margin-right: 0; to the last .card-project element */
@@ -257,6 +259,12 @@ color: #ececec;
   cursor: pointer;
 }
 
+.card-project:active { 
+  transform: scale(1.1);
+}
+
+
+
 
 
 
@@ -273,7 +281,7 @@ color: #ececec;
   background-size: contain; /* Ensure the background image fits within the container */
   background-repeat: no-repeat; /* Prevent the background image from repeating */
   background-position: center; /* Center the background image within the container */
-  z-index: 1000;
+  z-index: 0;
   opacity: 0.06;
 }
 

@@ -96,6 +96,25 @@ const textBullets = [
   "Domain Management: Managed DNS records for your domain name"
 ]
 
+const projects = [
+  {
+    name: 'Natours',
+    description: 'Advanced CSS and Sass.',
+    url: 'http://natours.sourri.com'
+  },
+  {
+    name: 'Forkify',
+    description: 'Pure JavaScript.',
+    url: 'http://forkify.sourri.com'
+  },
+  {
+    name: 'Node App',
+    description: 'Server side focus',
+    url: 'https://node-express-app-i22v.onrender.com/'
+  }
+];
+
+
 function MainContent() {
  
 
@@ -157,32 +176,24 @@ function MainContent() {
         <article className="article">
           <h2>Exemplary projects</h2>
           {/* Links to Previous Projects */}
-          <ul className="link-list">
-            <li>
-              <a href="http://natours.sourri.com" target="_blank" rel="noreferrer">
-                <div className="card-project" onClick={() => window.open('http://natours.sourri.com', '_blank')}>
-                  Natours
-                  <p className='projects'>Advanced CSS and Sass.</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="http://forkify.sourri.com" target="_blank" rel="noreferrer">
-                <div className="card-project" onClick={() => window.open('http://forkify.sourri.com', '_blank')}>
-                  Forkify
-                  <p className='projects'>Pure JavaScript.</p>
-                </div>
-              </a>
-            </li>
 
-            <li>
-              <a href="https://node-express-app-i22v.onrender.com/" target="_blank" rel="noreferrer">
-                <div className="card-project" onClick={() => window.open('https://node-express-app-i22v.onrender.com/', '_blank')}>
-                  Node App 
-                  <p className='projects'>Server side focus</p>
-                </div>
-              </a>
-            </li>
+          <ul className="link-list">
+            {projects.map((project, index) => (
+              <li key={index}>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={index === activeIndex ? 'active' : ''}
+                  onClick={() => handleItemClick(index)}
+                >
+                  <div className="card-project">
+                    {project.name}
+                    <p className="projects">{project.description}</p>
+                  </div>
+                </a>
+              </li>
+            ))}
           </ul>
         </article>
 
@@ -229,6 +240,17 @@ function TextRenderer({ textElements }) {
 }
 
 
+const cardProjects = document.querySelectorAll('.card-project');
+
+cardProjects.forEach(card => {
+  card.addEventListener('touchstart', function() {
+    this.classList.add('active');
+  });
+  
+  card.addEventListener('touchend', function() {
+    this.classList.remove('active');
+  });
+});
 
 
 
