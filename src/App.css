@@ -207,7 +207,7 @@ aside a:hover {
   display: flex; /* Use flexbox to display list items in a row */
   flex-wrap: wrap; /* Allow list items to wrap to the next line */
   justify-content: space-around; /* Add space around list items */
- 
+
 }
 
 .link-list li {
@@ -221,20 +221,7 @@ max-width: 500px;
 }
 
 
-.card-project {
-  padding: 15px;
 
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 8px  #61dafb;;
-
-  color:#61dafb;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease; /* Smooth transition for scaling effect */
-display: grid;
-margin-right: 20px;
-
-}
 
 .card-project {
   padding: 15px;
@@ -245,7 +232,7 @@ margin-right: 20px;
   margin-bottom: 10px;
   transition: transform 0.3s ease; /* Smooth transition for scaling effect */
   display: grid;
- 
+
   z-index: 0;
 }
 
@@ -371,6 +358,7 @@ color: #ececec;
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items horizontally */
     text-align: center; /* Center text within the article */
+ 
   }
 
   .article h2 {
@@ -389,6 +377,9 @@ color: #ececec;
 }
 
 
+.article a {
+  text-decoration: none;
+}
 
 
 /* Media Query for Small Screens */

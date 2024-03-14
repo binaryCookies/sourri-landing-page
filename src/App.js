@@ -56,48 +56,55 @@ function Header() {
 
 
 
+const textElements = [
+  "Welcome to Sourri.com, your portal to innovation and creativity! While this site serves as a placeholder for our forthcoming project, we're thrilled to provide you with an exclusive preview of what's on the horizon at staging.sourri.com. Stay tuned as we prepare to unveil an immersive experience that promises to redefine your interactions with technology and design.",
+  "Welcome to my demonstration page showcasing my success in setting up web servers and hosting websites.",
+  "Experience seamless browser automation tailored to your specific needs.",
+  "Discover the power of Census, a comprehensive data management solution designed to streamline your workflow and enhance productivity.",
+  "Revolutionize your marketing strategy with our cutting-edge service, offering up-to-date lists of commercial and residential targets nationwide. Reduce mailing costs and maximize your ROI.",
+  "Unlock the potential of our custom map API, providing visually stunning boundary and point visualizations for over 14,000,000 unique data points and 28,000,000 addresses.",
+  "Background: As the creator of unique market intelligence solutions for commercial real estate, we specialize in parsing XML, GIS mapping, delineating boundaries for any city nationwide, and expert database engineering and system design.",
+  "Latest Achievement: Successfully migrated the project to the web server and implemented a tunnel to listen to the port, enabling seamless integration with the Visual Studio Code editor."
+];
+
+
+const textBullets = [
+  "Initial Setup: Installed Ubuntu on the server. Configured the initial system settings, including the hostname",
+  "System Updates: Ran system updates to ensure your server's software is up-to-date",
+
+  "GeoJson",
+  "Browser automation: automate login, testing, data extraction",
+  "GIS custom maping and visualizations",
+  "XML - GML: parsing large data files",
+  "Database",
+  "Server Provisioning: SSH, Firewall, and DNS config, SSL certificates, Log management, Docker, GitHub integration, Domain managment",
+  "SDMX Integration:  ISO standard designed to describe statistical data and metadata, normalise their exchange",
+  "System design",
+  "Git",
+  "GitHub Integration: Integrated your server with GitHub to collaborate on code development",
+  "Web Server (Apache): Installed and configured the Apache web server. Created virtual hosts to host multiple websites",
+  "Web Hosting: sourri.com, forkify.sourri.com, natours.sourri.com",
+  "PubSub Patterns",
+  "Tunneling",
+  "SSH Configuration: Configured SSH for secure remote access to the server. Generated SSH key pairs for secure logins",
+  "Firewall Configuration: Set up and configured a firewall (using UFW) to control incoming and outgoing network traffic. Opened necessary ports for services like HTTP, HTTPS, and SSH. Implemented rules to enhance server security",
+  "DNS Configuration: Registered a domain name for your server. Configured DNS settings to point to the domain to your server's IP address",
+  "SSL Certificate (Let's Encrypt): Installed SSL certificates to enable secure HTTPS connections for the websites",
+  "Log Management: Configured log rotation to manage log files efficiently. Scheduled log rotation to keep log files from consuming too much disk space",
+  "User Access Control: Set up user groups with different access levels. Assigned permissions and access rights to users based on their roles (admin, user, etc.)",
+  "Docker and Docker Compose: Installed Docker to manage containers. Used Docker Compose to define multi-container applications",
+  "Domain Management: Managed DNS records for your domain name"
+]
 
 function MainContent() {
  
-    const textElements = [
-      "Welcome to Sourri.com, your portal to innovation and creativity! While this site serves as a placeholder for our forthcoming project, we're thrilled to provide you with an exclusive preview of what's on the horizon at staging.sourri.com. Stay tuned as we prepare to unveil an immersive experience that promises to redefine your interactions with technology and design.",
-      "Welcome to my demonstration page showcasing my success in setting up web servers and hosting websites.",
-      "Experience seamless browser automation tailored to your specific needs.",
-      "Discover the power of Census, a comprehensive data management solution designed to streamline your workflow and enhance productivity.",
-      "Revolutionize your marketing strategy with our cutting-edge service, offering up-to-date lists of commercial and residential targets nationwide. Reduce mailing costs and maximize your ROI.",
-      "Unlock the potential of our custom map API, providing visually stunning boundary and point visualizations for over 14,000,000 unique data points and 28,000,000 addresses.",
-      "Background: As the creator of unique market intelligence solutions for commercial real estate, we specialize in parsing XML, GIS mapping, delineating boundaries for any city nationwide, and expert database engineering and system design.",
-      "Latest Achievement: Successfully migrated the project to the web server and implemented a tunnel to listen to the port, enabling seamless integration with the Visual Studio Code editor."
-    ];
- 
 
-    const textBullets = [
-      "Initial Setup: Installed Ubuntu on the server. Configured the initial system settings, including the hostname",
-      "System Updates: Ran system updates to ensure your server's software is up-to-date",
-  
-      "GeoJson",
-      "Browser automation: automate login, testing, data extraction",
-      "GIS custom maping and visualizations",
-      "XML - GML: parsing large data files",
-      "Database",
-      "Server Provisioning: SSH, Firewall, and DNS config, SSL certificates, Log management, Docker, GitHub integration, Domain managment",
-      "SDMX Integration:  ISO standard designed to describe statistical data and metadata, normalise their exchange",
-      "System design",
-      "Git",
-      "GitHub Integration: Integrated your server with GitHub to collaborate on code development",
-      "Web Server (Apache): Installed and configured the Apache web server. Created virtual hosts to host multiple websites",
-      "Web Hosting: sourri.com, forkify.sourri.com, natours.sourri.com",
-      "PubSub Patterns",
-      "Tunneling",
-      "SSH Configuration: Configured SSH for secure remote access to the server. Generated SSH key pairs for secure logins",
-      "Firewall Configuration: Set up and configured a firewall (using UFW) to control incoming and outgoing network traffic. Opened necessary ports for services like HTTP, HTTPS, and SSH. Implemented rules to enhance server security",
-      "DNS Configuration: Registered a domain name for your server. Configured DNS settings to point to the domain to your server's IP address",
-      "SSL Certificate (Let's Encrypt): Installed SSL certificates to enable secure HTTPS connections for the websites",
-      "Log Management: Configured log rotation to manage log files efficiently. Scheduled log rotation to keep log files from consuming too much disk space",
-      "User Access Control: Set up user groups with different access levels. Assigned permissions and access rights to users based on their roles (admin, user, etc.)",
-      "Docker and Docker Compose: Installed Docker to manage containers. Used Docker Compose to define multi-container applications",
-      "Domain Management: Managed DNS records for your domain name"
-    ]
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    // Handle click event to set activeIndex
+    const handleItemClick = (index) => {
+      setActiveIndex(index === activeIndex ? null : index);
+    };
 
   return (
     <main className="main">
@@ -220,6 +227,7 @@ function TextRenderer({ textElements }) {
     </div>
   );
 }
+
 
 
 
