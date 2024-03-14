@@ -206,17 +206,18 @@ aside a:hover {
   margin: 0;
   display: flex; /* Use flexbox to display list items in a row */
   flex-wrap: wrap; /* Allow list items to wrap to the next line */
-  justify-content: space-between; /* Add space between list items */
+  justify-content: space-around; /* Add space around list items */
  
 }
 
 .link-list li {
   flex: 1; /* Each list item takes up equal space */
-
+max-width: 500px;
 }
 /* To remove margin from the last list item */
 .link-list li:last-child {
   margin-right: 0; /* Remove margin from the last list item */
+
 }
 
 
@@ -230,8 +231,29 @@ aside a:hover {
   color:#61dafb;
   margin-bottom: 10px;
   transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+display: grid;
+margin-right: 20px;
 
 }
+
+.card-project {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px  #61dafb;
+  color: #61dafb;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+  display: grid;
+ 
+  z-index: 0;
+}
+
+/* Apply margin-right: 0; to the last .card-project element */
+.card-project p {
+color: #ececec;
+}
+
 
 .card-project a {
   text-decoration: none;
@@ -245,6 +267,11 @@ aside a:hover {
 
 .card-project:hover {
   transform: scale(1.1); /* Increase the size of the hovered element */
+  cursor: pointer;
+}
+.card-project:{
+  transform: scale(1.1); /* Increase the size of the hovered element */
+  cursor: pointer;
 }
 
 
@@ -363,6 +390,7 @@ aside a:hover {
 
 
 
+
 /* Media Query for Small Screens */
 @media (max-width: 800px) {
   /* Styles for the list */
@@ -380,7 +408,6 @@ aside a:hover {
   /* Center text within the card projects */
   .card-project p {
     text-align: center;
-    color: red; /* Add a temporary style to see if it's applied */
   }
   .projects {
     margin-right: 0;
