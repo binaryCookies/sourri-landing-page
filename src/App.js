@@ -3,6 +3,18 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 
+function smoothScrollToSection(e) {
+  e.preventDefault();
+  const targetId = e.target.getAttribute('href').substring(1)
+  const targetSection = document.getElementById(targetId)
+  if(targetSection) {
+    targetSection.scrollIntoView({behavior: 'smooth'})
+  }
+
+}
+
+
+
 
 function App() {
   return (
@@ -19,15 +31,15 @@ function App() {
 function NavBar() {
   return (
     <nav className="nav-bar">
-      <ul>
+      <ul className='nav-list'>
         <li>
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/experience">Experience</a>
+          <a href="#experience">Experience</a>
         </li>
         <li>
-          <a href="/projects">Projects</a>
+          <a onClick={smoothScrollToSection} className='projects' href="#projects">Projects</a>
         </li>
         <li>
           <a href="/contact">Contact</a>
@@ -130,54 +142,54 @@ function MainContent() {
       {/* Sidebar */}
       <div className="content">
         {/* Sidebar */}
-        <aside className="aside">
+        <div className="project-container" id='experience'>
           <h2>Project highlights</h2>
           {/* Project Highlights Section */}
           <TextRenderer textElements={textBullets} />
   
-      <div className="project-highlights">
-        <section className="highlight-section">
-          <h3>SDMX Integration for Census Data:</h3>
-          <ul>
-            <li>Seamlessly integrated the SDMX API for accessing and retrieving census data.</li>
-            <li>Implemented robust data fetching mechanisms to handle large datasets efficiently.</li>
-            <li>Utilized SDMX global standards for data exchange and interoperability, ensuring compatibility and consistency.</li>
-          </ul>
-      </section>   
-      <section className="highlight-section">
-        <h3>Parsing XML/GML:</h3>
-        <ul>
-          <li>Tackled the challenge of parsing XMLGML data, a large and complex data format.</li>
-          <li>Developed custom parsers to extract relevant information and transform it into GeoJSON format.</li>
-          <li>Leveraged Node.js and JavaScript libraries to streamline the parsing and conversion process.</li>
-        </ul>
-      </section>   
-      <section className="highlight-section">
-        <h3>Rendering Data to a Map:</h3>
-        <ul>
-          <li>Leveraged the power of Mapbox for dynamic and interactive data visualization.</li>
-          <li>Developed boundary visualizations for census districts, enabling users to explore demographic data with ease.</li>
-          <li>Integrated GeoJSON data with Mapbox to create visually stunning and informative map displays.</li>
-        </ul>
-      </section>   
-      <section className="highlight-section">
-        <h3>Setting Up Mapbox:</h3>
-        <ul>
-          <li>Configured and customized Mapbox settings to suit project requirements.</li>
-          <li>Established seamless integration between backend data sources and Mapbox frontend interfaces.</li>
-          <li>Implemented advanced mapping features such as clustering, heatmaps, and custom overlays for enhanced user experience.</li>
-        </ul>
-      </section>
-    </div>
+          <div className="project-highlights">
+              <section className="highlight-section">
+                <h3>SDMX Integration for Census Data:</h3>
+                <ul>
+                  <li>Seamlessly integrated the SDMX API for accessing and retrieving census data.</li>
+                  <li>Implemented robust data fetching mechanisms to handle large datasets efficiently.</li>
+                  <li>Utilized SDMX global standards for data exchange and interoperability, ensuring compatibility and consistency.</li>
+                </ul>
+            </section>   
+            <section className="highlight-section">
+              <h3>Parsing XML/GML:</h3>
+              <ul>
+                <li>Tackled the challenge of parsing XMLGML data, a large and complex data format.</li>
+                <li>Developed custom parsers to extract relevant information and transform it into GeoJSON format.</li>
+                <li>Leveraged Node.js and JavaScript libraries to streamline the parsing and conversion process.</li>
+              </ul>
+            </section>   
+            <section className="highlight-section">
+              <h3>Rendering Data to a Map:</h3>
+              <ul>
+                <li>Leveraged the power of Mapbox for dynamic and interactive data visualization.</li>
+                <li>Developed boundary visualizations for census districts, enabling users to explore demographic data with ease.</li>
+                <li>Integrated GeoJSON data with Mapbox to create visually stunning and informative map displays.</li>
+              </ul>
+            </section>   
+            <section className="highlight-section">
+              <h3>Setting Up Mapbox:</h3>
+              <ul>
+                <li>Configured and customized Mapbox settings to suit project requirements.</li>
+                <li>Established seamless integration between backend data sources and Mapbox frontend interfaces.</li>
+                <li>Implemented advanced mapping features such as boundary mapping, and custom overlays for enhanced user experience.</li>
+              </ul>
+            </section>
+          </div>
 
-        </aside>
+        </div>
 
         {/* Previous Projects Section */}
         <article className="article">
           <h2>Exemplary projects</h2>
           {/* Links to Previous Projects */}
 
-          <ul className="link-list">
+          <ul className="link-list" id='projects'>
             {projects.map((project, index) => (
               <li key={index}>
                 <a

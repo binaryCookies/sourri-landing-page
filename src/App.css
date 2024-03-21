@@ -1,7 +1,9 @@
 body {
   background-color: #282c34;
   font-family: "Optimistic Display", Arial, sans-serif; 
+
 }
+
 
 h2 {
   color:#fff;
@@ -60,6 +62,7 @@ justify-content: center;
   border-radius: 5px; /* Add rounded corners */
   color:#61dafb;
   transition: background-color 0.3s ease; /* Smooth transition for background color */
+  
 }
 
 .nav-bar a:hover {
@@ -104,7 +107,7 @@ justify-content: center;
 
 /* Adjustments for sidebar */
 /* Adjustments for sidebar */
-aside {
+.project-container {
   padding: 20px;
   list-style-type: none;
   min-height: 30vh; /* Set minimum height to 60% of the viewport height */
@@ -113,7 +116,7 @@ aside {
 }
 
 
-/* Adjustments for aside */
+/* Adjustments for content */
 .content {
   display: grid;
   grid-template-columns: 3fr;
@@ -126,7 +129,7 @@ aside {
 
 
 
-aside ul {
+.project-container ul {
     list-style-type: none;
 
   text-decoration: none; /* Remove underline from links */
@@ -138,7 +141,7 @@ aside ul {
 
 }
 
-aside a {
+.project-container a {
   text-decoration: none; /* Remove underline from links */
   color: #333; /* Set text color */
   font-size: 16px; /* Set font size */
@@ -146,11 +149,11 @@ aside a {
   transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-aside h2 {
+.project-container h2 {
   text-transform: uppercase;
 }
 
-aside a:hover {
+.project-container a:hover {
   background-color: #f0f0f0; 
 }
 
