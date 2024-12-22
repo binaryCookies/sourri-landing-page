@@ -1,53 +1,43 @@
 body {
   background-color: #282c34;
-  font-family: "Optimistic Display", Arial, sans-serif; 
-
+  font-family: "Optimistic Display", Arial, sans-serif;
 }
 
-
 h2 {
-  color:#fff;
+  color: #fff;
   font: "Optimistic Display", sans-serif;
 }
 
 .App {
-  text-align: center;  
-  color:#61dafb;
+  text-align: center;
+  color: #61dafb;
 }
-
 
 .App-header {
   min-height: 10vh;
   display: flex;
   flex-direction: row;
-justify-content: center;
+  justify-content: center;
 
   font-size: calc(5px + 2vmin);
   max-width: 800px;
   margin: 0 auto;
   font: "Optimistic Display";
   color: #fff;
-
 }
 
-
-
-
-.p-text{
+.p-text {
   font: "Optimistic Display";
-
 }
 
-
-
-.nav-bar ul{
+.nav-bar ul {
   display: flex;
   flex-direction: row; /* Ensure items are displayed horizontally */
   justify-content: center; /* Align items horizontally at the center */
- 
+
   padding: 5px; /* Remove default padding */
   margin: 0; /* Remove default margin */
-  background-color: rgba(32, 35, 42, .6);
+  background-color: rgba(32, 35, 42, 0.6);
 }
 
 .nav-bar li {
@@ -56,22 +46,17 @@ justify-content: center;
 
 .nav-bar a {
   text-decoration: none; /* Remove underline from links */
-  font-size: 16px; /* Set font size */
+
   font-weight: bold; /* Set font weight to bold */
   padding: 10px 20px; /* Add padding to make the clickable area larger */
   border-radius: 5px; /* Add rounded corners */
-  color:#61dafb;
+  color: #61dafb;
   transition: background-color 0.3s ease; /* Smooth transition for background color */
-  
 }
 
 .nav-bar a:hover {
   background-color: #f0f0f0; /* Change background color on hover */
 }
-
-
-
-
 
 .card {
   padding: 20px;
@@ -81,15 +66,10 @@ justify-content: center;
   min-height: 60vh; /* Set minimum height to 60% of the viewport height */
 }
 
-
 .text-container {
   max-width: 100%;
   padding-top: 1rem;
-
 }
-
-
-
 
 .text-container ul {
   list-style-type: none;
@@ -98,7 +78,6 @@ justify-content: center;
 
 .text-container ul li {
   margin-bottom: 10px;
-
 }
 
 .text-content {
@@ -111,10 +90,7 @@ justify-content: center;
   padding: 20px;
   list-style-type: none;
   min-height: 30vh; /* Set minimum height to 60% of the viewport height */
-
-
 }
-
 
 /* Adjustments for content */
 .content {
@@ -124,21 +100,14 @@ justify-content: center;
   margin: 30px;
 }
 
-
-
-
-
-
 .project-container ul {
-    list-style-type: none;
+  list-style-type: none;
 
   text-decoration: none; /* Remove underline from links */
   color: #ececec;
   font-size: 16px; /* Set font size */
 
-
   transition: background-color 0.3s ease; /* Smooth transition for background color */
-
 }
 
 .project-container a {
@@ -154,12 +123,8 @@ justify-content: center;
 }
 
 .project-container a:hover {
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
 }
-
-
-
-
 
 .project-highlights {
   display: flex;
@@ -169,6 +134,18 @@ justify-content: center;
   flex: 1;
   display: flex; /* Added to align items horizontally */
   flex-direction: column; /* Align items vertically */
+
+  /* NEW STYLING */
+  /* border-radius: 5px; */
+  /* box-shadow: 0 4px 8px  #61dafb; */
+
+  list-style-type: none;
+  padding: 3px;
+  margin: 0;
+  display: flex; /* Use flexbox to display list items in a row */
+  flex-wrap: wrap; /* Allow list items to wrap to the next line */
+  justify-content: space-around; /* Add space around list items */
+  margin-right: 10px;
 }
 
 .project-highlights .highlight-section ul {
@@ -179,29 +156,68 @@ justify-content: center;
 }
 
 .project-highlights .highlight-section ul:first-child {
-  margin-right: 20px; /* Adjust this value as needed */
+  margin-right: 20px;
 }
 
 .project-highlights .highlight-section:nth-child(even) ul {
   margin-left: auto; /* Push content to the right */
 }
 
+.card-container {
+  perspective: 100rem;
 
+  display: inline-block;
+}
 
+.card {
+  position: absolute;
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+}
+
+.flip-card,
+.card-front,
+.card-back {
+  width: 20rem;
+  height: 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.flip-card {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-container:hover .flip-card,
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  border-radius: 5px;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.card-front {
+  background-color: rgba(32, 35, 42, 0.6);
+}
 
 /* PROJECT HIGHLIGHTS & EXPERIENCES LIST */
 .project-highlights .highlight-section ul:first-child li:first-child {
   font-weight: bold;
-  color:#61dafb;
+  color: #61dafb;
   padding: 5px;
-  
 }
 
-.project-highlights ul{
+.project-highlights ul {
   padding-left: 0;
 }
-
-
 
 .link-list {
   list-style-type: none;
@@ -210,29 +226,22 @@ justify-content: center;
   display: flex; /* Use flexbox to display list items in a row */
   flex-wrap: wrap; /* Allow list items to wrap to the next line */
   justify-content: space-around; /* Add space around list items */
-
 }
 
 .link-list li {
   flex: 1; /* Each list item takes up equal space */
-max-width: 500px;
+  max-width: 500px;
 }
 /* To remove margin from the last list item */
 .link-list li:last-child {
   margin-right: 0; /* Remove margin from the last list item */
-
 }
-
-
-
-
-
 
 .card-project {
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 8px  #61dafb;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 4px 8px #61dafb;
   color: #61dafb;
   margin-bottom: 10px;
   transition: transform 0.3s ease; /* Smooth transition for scaling effect */
@@ -243,9 +252,8 @@ max-width: 500px;
 
 /* Apply margin-right: 0; to the last .card-project element */
 .card-project p {
-color: #ececec;
+  color: #ececec;
 }
-
 
 .card-project a {
   text-decoration: none;
@@ -262,19 +270,11 @@ color: #ececec;
   cursor: pointer;
 }
 
-.card-project:active { 
+.card-project:active {
   transform: scale(1.1);
 }
 
-
-
-
-
-
-
-
 .react-logo-container {
-
   position: fixed; /* Use fixed positioning */
   top: 50%; /* Move the top edge of the logo to the middle of the viewport */
   left: 50%; /* Move the left edge of the logo to the middle of the viewport */
@@ -288,10 +288,6 @@ color: #ececec;
   opacity: 0.06;
 }
 
-
-
-
-
 /* Rules for the animation */
 .react-logo-container img {
   animation: App-logo-spin 20s linear infinite; /* Apply the animation */
@@ -299,14 +295,9 @@ color: #ececec;
   justify-self: flex-start;
 }
 
-
-
-
 .App-link {
   color: #61dafb;
 }
-
-
 
 @keyframes App-logo-spin {
   from {
@@ -320,10 +311,14 @@ color: #ececec;
 .footer {
   background-color: #282c34;
   color: #fff;
+
+  font-size: small;
+  line-height: 0.5;
+  position: relative;
 }
 
-@media(max-width: 575px){
-  .App p{
+@media (max-width: 575px) {
+  .App p {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -332,31 +327,27 @@ color: #ececec;
 }
 
 /* PROJECT HIGHLIGHTS SECTION */
-@media(max-width: 1350px){
-  .project-highlights{
+@media (max-width: 1350px) {
+  .project-highlights {
     display: grid;
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-
 }
-@media(max-width: 790px){
-  .project-highlights{
+@media (max-width: 790px) {
+  .project-highlights {
     display: grid;
     gap: 10px;
-  grid-template-columns: 1fr ;
-  align-items: center;  /* vertical-align */
-  justify-items: center;   /* horizontal-align */
-  text-align: center;
+    grid-template-columns: 1fr;
+    align-items: center; /* vertical-align */
+    justify-items: center; /* horizontal-align */
+    text-align: center;
   }
-
 }
 
-@media(max-width: 790px){
-  .project-highlights{
-
-  grid-template-columns: 1fr;
+@media (max-width: 790px) {
+  .project-highlights {
+    grid-template-columns: 1fr;
   }
-
 }
 
 /* Previous projects. Center the elements on the horizontal axis using flex */
@@ -366,7 +357,6 @@ color: #ececec;
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items horizontally */
     text-align: center; /* Center text within the article */
- 
   }
 
   .article h2 {
@@ -384,11 +374,9 @@ color: #ececec;
   }
 }
 
-
 .article a {
-     text-decoration: none;
+  text-decoration: none;
 }
-
 
 /* Media Query for Small Screens */
 @media (max-width: 800px) {
@@ -403,14 +391,12 @@ color: #ececec;
   .card-project {
     width: 100%; /* Ensure card projects take full width */
   }
-  
+
   /* Center text within the card projects */
   .card-project p {
     text-align: center;
   }
   .projects {
     margin-right: 0;
-
   }
 }
-

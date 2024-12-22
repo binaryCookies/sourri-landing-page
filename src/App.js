@@ -21,6 +21,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Header />
+      {/* <Cards /> */}
       <MainContent />
       <Footer />
     </div>
@@ -66,7 +67,25 @@ function Header() {
 }
 
 
+function Cards() {
+  return(
+    <div className='card-container'>
+    <div className='flip-card'>
 
+      <article className='card-front card'>
+        <h3>TEST: SDMX Integration for Census Data:</h3>
+      </article>
+      <article className='card-back card'>
+        <ul>
+          <li>Seamlessly integrated the SDMX API for accessing and retrieving census data.</li>
+          <li>Implemented robust data fetching mechanisms to handle large datasets efficiently.</li>
+          <li>Utilized SDMX global standards for data exchange and interoperability, ensuring compatibility and consistency.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+  )
+}
 
 const textElements = [
   "Welcome to Sourri.com, your portal to innovation and creativity! While this site serves as a placeholder for our forthcoming project, we're thrilled to provide you with an exclusive preview of what's on the horizon at staging.sourri.com. Stay tuned as we prepare to unveil an immersive experience that promises to redefine your interactions with technology and design.",
@@ -74,7 +93,7 @@ const textElements = [
   "Experience seamless browser automation tailored to your specific needs.",
   "Discover the power of Census, a comprehensive data management solution designed to streamline your workflow and enhance productivity.",
   "Revolutionize your marketing strategy with our cutting-edge service, offering up-to-date lists of commercial and residential targets nationwide. Reduce mailing costs and maximize your ROI.",
-  "Unlock the potential of our custom map API, providing visually stunning boundary and point visualizations for over 14,000,000 unique data points and 28,000,000 addresses.",
+  "Unlock the potential of our custom map API, providing visually stunning boundary and point visualizations for over 14,000,000 unique data points and ~40,000,000 addresses.",
   "Background: As the creator of unique market intelligence solutions for commercial real estate, we specialize in parsing XML, GIS mapping, delineating boundaries for any city nationwide, and expert database engineering and system design.",
   "Latest Achievement: Successfully migrated the project to the web server and implemented a tunnel to listen to the port, enabling seamless integration with the Visual Studio Code editor."
 ];
@@ -140,6 +159,8 @@ function MainContent() {
   return (
     <main className="main">
       {/* Sidebar */}
+
+
       <div className="content">
         {/* Sidebar */}
         <div className="project-container" id='experience'>
@@ -147,15 +168,17 @@ function MainContent() {
           {/* Project Highlights Section */}
           <TextRenderer textElements={textBullets} />
   
+         
           <div className="project-highlights">
-              <section className="highlight-section">
-                <h3>SDMX Integration for Census Data:</h3>
-                <ul>
-                  <li>Seamlessly integrated the SDMX API for accessing and retrieving census data.</li>
-                  <li>Implemented robust data fetching mechanisms to handle large datasets efficiently.</li>
-                  <li>Utilized SDMX global standards for data exchange and interoperability, ensuring compatibility and consistency.</li>
-                </ul>
+            <section className="highlight-section">
+              <h3>SDMX Integration for Census Data:</h3>
+              <ul>
+                <li>Seamlessly integrated the SDMX API for accessing and retrieving census data.</li>
+                <li>Implemented robust data fetching mechanisms to handle large datasets efficiently.</li>
+                <li>Utilized SDMX global standards for data exchange and interoperability, ensuring compatibility and consistency.</li>
+              </ul>
             </section>   
+            
             <section className="highlight-section">
               <h3>Parsing XML/GML:</h3>
               <ul>
@@ -181,33 +204,12 @@ function MainContent() {
               </ul>
             </section>
           </div>
+          
+
 
         </div>
 
-        {/* Previous Projects Section */}
-        <article className="article">
-          <h2>Exemplary projects</h2>
-          {/* Links to Previous Projects */}
 
-          <ul className="link-list" id='projects'>
-            {projects.map((project, index) => (
-              <li key={index}>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={index === activeIndex ? 'active' : ''}
-                  onClick={() => handleItemClick(index)}
-                >
-                  <div className="card-project">
-                    {project.name}
-                    <p className="projects">{project.description}</p>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </article>
 
         {/* Text Content Section */}
         <div className="text-content">
@@ -224,7 +226,7 @@ function MainContent() {
 function Footer() {
   return (
     <footer className="footer">
-      <p>Apache/2.4.52 (Ubuntu) Server at sourri.com Port 443</p>
+      <p>Apache/2.4.52 (Ubuntu) Server at sourri.com</p>
       <p>&copy; {new Date().getFullYear()} Sourri. All rights reserved.</p>
     </footer>
   );
@@ -236,7 +238,7 @@ function TextRenderer({ textElements }) {
   React.useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % textElements.length);
-    }, 5000); // Change interval duration as needed
+    }, 5000); 
 
     return () => clearInterval(intervalId);
   }, [textElements.length]);
@@ -257,6 +259,7 @@ const cardProjects = document.querySelectorAll('.card-project');
 cardProjects.forEach(card => {
   card.addEventListener('touchstart', function() {
     this.classList.add('active');
+
   });
   
   card.addEventListener('touchend', function() {
