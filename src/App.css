@@ -1,16 +1,25 @@
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  box-sizing: border-box;
+  
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-body {
+  width: 100%;
   background-color: #282c34;
   font-family: "Optimistic Display", Arial, sans-serif;
+  box-sizing: border-box;
+overflow-x: hidden;
 }
 
 h2 {
@@ -19,7 +28,6 @@ h2 {
 }
 
 .App {
-  /* shorthand  */
   flex: 1;
   text-align: center;
   color: #61dafb;
@@ -341,26 +349,41 @@ h2 {
   align-items: center;
   width: 100%;
   padding: 10px;
-  
+  text-wrap: wrap;
 }
 
-@media (max-width: 575px) {
+@media (min-width: 275px) {
   .App p {
     display: flex;
     justify-content: center;
     text-align: center;
     padding: 10px;
+    line-height: 1.6;
+  
+  }
+  .footer p {
+    line-height: 1.6;
+  };
+}
+@media (min-width: 395px) {
+  .App p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    line-height: 1.6;
+  
   }
 }
 
 /* PROJECT HIGHLIGHTS SECTION */
-@media (max-width: 1350px) {
+@media (min-width: 1350px) {
   .project-highlights {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (max-width: 790px) {
+@media (min-width: 790px) {
   .project-highlights {
     display: grid;
     gap: 10px;
@@ -371,14 +394,14 @@ h2 {
   }
 }
 
-@media (max-width: 790px) {
+@media (min-width: 790px) {
   .project-highlights {
     grid-template-columns: 1fr;
   }
 }
 
 /* Previous projects. Center the elements on the horizontal axis using flex */
-@media (max-width: 798px) {
+@media (min-width: 798px) {
   .article {
     display: flex;
     flex-direction: column; /* Stack elements vertically */

@@ -91,8 +91,8 @@ function MainContent() {
 function Footer() {
   return (
     <footer className="footer">
-      <p>Apache/2.4.52 (Ubuntu) Server at sourri.com</p>
-      <p>&copy; {new Date().getFullYear()} Sourri. All rights reserved.</p>
+      <p>Apache/2.4.52 (Ubuntu) Server at sourri.com | 
+      &copy; {new Date().getFullYear()} Sourri. All rights reserved.</p>
     </footer>
   );
 }
